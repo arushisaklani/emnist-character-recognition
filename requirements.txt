@@ -1,5 +1,7 @@
-Flask
+fastapi
+uvicorn
+gunicorn
 torch
 torchvision
 Pillow
-gunicorn
+python-multipart
