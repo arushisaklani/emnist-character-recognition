@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        EMNIST Character Classifier
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <div class="top-label">
+        FASTAPI + CNN + EMNIST
+    </div>
+
+
+    <h1>
+        EMNIST Character Classifier
+    </h1>
+
+
+    <p class="subtitle">
+        Upload a handwritten character and send it
+        directly to your deployed FastAPI CNN model.
+    </p>
+
+
+    <div class="main-grid">
+
+
+        <!-- LEFT -->
+
+        <div class="card">
+
+            <h2>
+                1. Upload Test Image
+            </h2>
+
+
+            <label>
+                Prediction API endpoint
+            </label>
+
+
+            <input
+                id="apiUrl"
+                type="text"
+                placeholder="https://your-render-url.onrender.com/predict"
+            >
+
+
+            <label>
+                EMNIST image
+            </label>
+
+
+            <div
+                id="dropZone"
+                class="drop-zone"
+            >
+
+                <div class="upload-icon">
+                    ☁
+                </div>
+
+                <p>
+                    Click to choose an image or
+                    drag & drop
+                </p>
+
+                <small>
+                    PNG/JPG/WebP recommended
+                </small>
+
+                <input
+                    id="fileInput"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    hidden
+                >
+
+            </div>
+
+
+            <div
+                id="previewBox"
+                class="preview-box hidden"
+            >
+
+                <img
+                    id="preview"
+                    alt="Preview"
+                >
+
+                <button
+                    id="removeButton"
+                    class="remove"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <button
+                id="predictButton"
+                class="predict-button"
+            >
+
+                🚀 Predict Character
+
+            </button>
+
+
+            <p class="hint">
+                Make sure your image contains a single
+                character (0-9, A-Z, a-z).
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="card result-card">
+
+            <h2>
+                2. Prediction Result
+            </h2>
+
+
+            <div
+                id="emptyResult"
+                class="empty-result"
+            >
+
+                <div>
+                    Upload an image and click
+                    Predict Character
+                </div>
+
+            </div>
+
+
+            <div
+                id="resultContent"
+                class="hidden"
+            >
+
+                <div
+                    id="prediction"
+                    class="prediction"
+                >
+                    -
+                </div>
+
+
+                <div class="confidence">
+
+                    Confidence:
+                    <strong id="confidence">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="status"
+                    class="status success"
+                >
+
+                    ✓ Prediction successful.
+
+                </div>
+
+
+                <div class="details">
+
+                    <h3>
+                        Prediction Details
+                    </h3>
+
+
+                    <div class="row">
+
+                        <span>
+                            Predicted Class
+                        </span>
+
+                        <strong id="predictedClass">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <span>
+                            Class Index
+                        </span>
+
+                        <strong id="classIndex">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <span>
+                            Confidence Score
+                        </span>
+
+                        <strong id="confidenceScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <span>
+                            Model
+                        </span>
+
+                        <strong>
+                            EMNIST CNN
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+
+                    ℹ️ The model is trained on
+                    EMNIST Balanced dataset
+                    (47 classes).
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        Built with ❤️ using FastAPI, CNN & EMNIST
+
+    </footer>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
